@@ -1,4 +1,6 @@
 import React from 'react';
+// import LandingPage from './home.jsx';
+// import PaymentPage from './payment.jsx';
 
 const LandingPage = () => {
   return (
@@ -87,6 +89,8 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
+      {/* <LandingPage /> */}
+      {/* <PaymentPage/> */}
       
     </div>
   );
