@@ -1,66 +1,25 @@
+import React from 'react'
+import LandingPage from './VotingPage';
 
-import React, { useState } from 'react';
 
-const VotingPage = () => {
-  const [votes, setVotes] = useState({
-    Math: 0,
-    Science: 0,
-    English: 0
-  });
-
-  const handleVote = (subject) => {
-    setVotes((prevVotes) => ({
-      ...prevVotes,
-      [subject]: prevVotes[subject] + 1
-    }));
-  };
-
+const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-      <h1 className="text-4xl font-bold text-gray-800 mb-10">Vote for Your Favorite Subject</h1>
-      
-      <div className="flex flex-wrap justify-center gap-8">
-        {/* Math Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 w-64 text-center transform hover:scale-105 transition duration-300">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Math</h2>
-          <p className="text-gray-600 mb-4">A fascinating world of numbers and equations. Cast your vote if Math is your favorite!</p>
-          <button
-            onClick={() => handleVote('Math')}
-            className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition duration-300"
-          >
-            Vote for Math
-          </button>
-          <p className="mt-4 text-gray-700 font-semibold">Votes: {votes.Math}</p>
+      <div className="bg-gray-100 font-sans">
+      <section className="bg-blue-600 text-white py-20">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+          <div className="w-full md:w-1/2">
+            <h1 className="text-5xl font-bold leading-tight mb-4">Make Every Vote Count!</h1>
+            <p className="text-lg mb-6">Join our platform to cast your vote and have your voice heard. Voting has never been this easy and accessible.</p>
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-200 transition duration-300">Get Started</button>
+          </div>
+          <div className="w-full md:w-1/2 mt-8 md:mt-0">
+            <img src="image1.jpg" alt="Voting Illustration" className="w-full rounded-lg shadow-lg" />
+          </div>
         </div>
-
-        {/* Science Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 w-64 text-center transform hover:scale-105 transition duration-300">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Science</h2>
-          <p className="text-gray-600 mb-4">Discover the wonders of the universe. Vote if Science is your favorite!</p>
-          <button
-            onClick={() => handleVote('Science')}
-            className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-500 transition duration-300"
-          >
-            Vote for Science
-          </button>
-          <p className="mt-4 text-gray-700 font-semibold">Votes: {votes.Science}</p>
-        </div>
-
-        {/* English Card */}
-        <div className="bg-white rounded-lg shadow-lg p-6 w-64 text-center transform hover:scale-105 transition duration-300">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">English</h2>
-          <p className="text-gray-600 mb-4">Explore the beauty of language and literature. Vote if English is your favorite!</p>
-          <button
-            onClick={() => handleVote('English')}
-            className="bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-500 transition duration-300"
-          >
-            Vote for English
-          </button>
-          <p className="mt-4 text-gray-700 font-semibold">Votes: {votes.English}</p>
-        </div>
-      </div>
+      </section>
+      <LandingPage />      
     </div>
-  );
-};
+  )
+}
 
-export default VotingPage;
+export default Home
